@@ -1,0 +1,26 @@
+query productRecommendations($identifier: ProductUniqueIdentifier! $type: CrossSelingInputEnum){
+  productRecommendations(identifier: $identifier, type:$type){
+    productId
+    productName
+    link
+    recommendations{
+      similars{
+        productName
+      }
+    }
+    linkText
+    items{
+      itemId
+      name
+      images{
+        imageUrl
+      }
+      sellers{
+        addToCartLink
+        commertialOffer{
+          Price
+        }
+      }
+    }
+  }
+}
